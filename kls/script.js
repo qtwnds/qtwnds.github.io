@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const inputField = document.getElementById("text-input");
   const translatedText = document.getElementById("translated-text");
   const copyButton = document.getElementById("copy-button");
-  const langSwitchButton = document.getElementById("lang-switch");
   const toastNotification = document.getElementById("toast-notification");
 
   // get last session input from localStorage
@@ -55,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function translateText(text, map) {
     return text
       .split("")
-      .map((char) => char || map[char.toLowerCase()] )
+      .map((char) => char || map[char.toLowerCase()])
       .join("");
   }
 
@@ -95,12 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const text = inputField.value;
     localStorage.setItem("savedText", text); // saves text to localStorage
     translateAndDisplay(text);
-  });
-
-  langSwitchButton.addEventListener("click", () => {
-    currentLanguage = currentLanguage === "ru" ? "en" : "ru";
-    langSwitchButton.textContent =
-      currentLanguage === "ru" ? "RU ↔ EN" : "EN ↔ RU";
   });
 
   copyButton.addEventListener("click", async () => {
