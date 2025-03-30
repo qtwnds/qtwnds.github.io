@@ -3,44 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Keyboard Layout Switcher</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
+    <title>Service Unavailable</title>
+    <style>
+      /* Import Inter font */
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap");
+
+      body {
+        margin-left: 30px;
+        margin-right: 30px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        background-color: #151515;
+        color: #ffffff;
+        font-family: "Inter", sans-serif;
+        text-align: center;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .ggr {
+        display: flex;
+        gap: 2vw;
+        flex-direction: row;
+        margin-bottom: 1em;
+      }
+
+      .vector {
+        fill: #ff1529;
+        width: 2em;
+        height: 2em;
+      }
+
+      .heading {
+        font-size: 30px;
+        font-weight: 600; /* Semibold */
+        margin: 0;
+      }
+
+      .subheading {
+        font-size: 20px;
+        font-weight: 500; /* Medium */
+        color: #999999;
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <header>
-        <h1>🐻 Paw KLS</h1>
-        <p>Keyboard Layout Switch Service</p>
-      </header>
+      <!-- Vector Icon -->
+      <div class="ggr">
+        <svg
+          class="vector"
+          viewBox="0 0 26 26"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M25.5 13C25.5 19.9036 19.9036 25.5 13 25.5C6.09644 25.5 0.5 19.9036 0.5 13C0.5 6.09644 6.09644 0.5 13 0.5C19.9036 0.5 25.5 6.09644 25.5 13ZM10.4874 8.01256C9.80402 7.32915 8.69598 7.32915 8.01256 8.01256C7.32915 8.69598 7.32915 9.80402 8.01256 10.4874L10.5251 13L8.01256 15.5126C7.32915 16.196 7.32915 17.304 8.01256 17.9874C8.69598 18.6709 9.80402 18.6709 10.4874 17.9874L13 15.4749L15.5126 17.9874C16.196 18.6709 17.304 18.6709 17.9874 17.9874C18.6709 17.304 18.6709 16.196 17.9874 15.5126L15.4749 13L17.9874 10.4874C18.6709 9.80402 18.6709 8.69598 17.9874 8.01256C17.304 7.32915 16.196 7.32915 15.5126 8.01256L13 10.5251L10.4874 8.01256Z"
+            fill="#FF1529"
+          />
+        </svg>
 
-      <main>
-        <div class="input-container">
-          <textarea
-            id="text-input"
-            placeholder="Enter your text here..."
-          ></textarea>
-        </div>
-
-        <div class="output-container">
-          <h2>Output:</h2>
-          <div class="translated-text-container">
-            <p id="translated-text">...</p>
-            <button id="copy-button">Copy to clipboard</button>
-          </div>
-        </div>
-      </main>
-
-      <footer>
-        <p>Version 1.26</p>
-      </footer>
-
-      <!-- Toast Notification -->
-      <div id="toast-notification" class="toast">
-        <span id="toast-message">🐻‍❄️ Text copied to clipboard</span>
+        <!-- Heading -->
+        <p class="heading">This service is dead at the moment</p>
       </div>
+      <!-- Subheading -->
+      <p class="subheading">
+        Sorry for the inconvenience caused. We are working hard to bring it back
+        online as soon as possible.
+      </p>
     </div>
-
-    <script src="script.js"></script>
   </body>
 </html>
