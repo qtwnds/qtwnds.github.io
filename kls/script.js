@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const copyButton = document.getElementById("copy-button");
   const toastNotification = document.getElementById("toast-notification");
 
-  // get last session input from localStorage
+  // Retrieve last session input from localStorage
   const savedText = localStorage.getItem("savedText");
   if (savedText) {
     inputField.value = savedText;
@@ -54,7 +54,17 @@ document.addEventListener("DOMContentLoaded", () => {
   function translateText(text, map) {
     return text
       .split("")
-      .map((char) => char || map[char.toLowerCase()])
+      .map((char) => {
+        const lowerChar = char.toLowerCase();
+        if (map[lowerChar]) {
+          // If character exists in the map, translate it
+          return char === lowerChar
+            ? map[lowerChar]
+            : map[lowerChar].toUpperCase();
+        }
+        // Preserve non-alphabetic characters
+        return char;
+      })
       .join("");
   }
 
@@ -81,18 +91,18 @@ document.addEventListener("DOMContentLoaded", () => {
       translatedText.textContent = "Unknown language";
     }
 
-    // text reveal anim
+    // Text reveal animation
     translatedText.style.opacity = 0;
     translatedText.style.transform = "translateY(10px)";
     setTimeout(() => {
       translatedText.style.opacity = 1;
       translatedText.style.transform = "translateY(0)";
-    }, 50); // anim delay
+    }, 50); // Animation delay
   }
 
   inputField.addEventListener("input", () => {
     const text = inputField.value;
-    localStorage.setItem("savedText", text); // saves text to localStorage
+    localStorage.setItem("savedText", text); // Save text to localStorage
     translateAndDisplay(text);
   });
 
@@ -106,11 +116,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // this fn shows toast notification
+  // Show toast notification
   function showToast() {
     toastNotification.classList.add("show");
     setTimeout(() => {
       toastNotification.classList.remove("show");
-    }, 3000); // removes toast after 3000ms (3s)
+    }, 3000); // Remove toast after 3000ms (3s)
   }
 });
