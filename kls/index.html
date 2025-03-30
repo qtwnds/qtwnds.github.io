@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard Layout Switcher</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🐻 Paw KLS</h1>
+        <p>Keyboard Layout Switch Service</p>
+      </header>
+
+      <main>
+        <div class="input-container">
+          <textarea
+            id="text-input"
+            placeholder="Enter your text here..."
+          ></textarea>
+          <div class="language-switch">
+            <button id="lang-switch">RU ↔ EN</button>
+          </div>
+        </div>
+
+        <div class="output-container">
+          <h2>Output:</h2>
+          <div class="translated-text-container">
+            <p id="translated-text">...</p>
+            <button id="copy-button">Copy to clipboard</button>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <p>Version 1.26</p>
+      </footer>
+
+      <!-- Toast Notification -->
+      <div id="toast-notification" class="toast">
+        <span id="toast-message">🐻‍❄️ Text copied to clipboard</span>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
