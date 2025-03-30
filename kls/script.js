@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function translateText(text, map) {
     return text
       .split("")
-      .map((char) => char) // || map[char.toLowerCase()] )
+      .map()
       .join("");
   }
 
